@@ -1,0 +1,2605 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>FFernandes Engenharia e Construção Ltda. — Projetos de Instalações Elétricas e Hidráulicas</title>
+  <meta name="description" content="A FFernandes Engenharia e Construção Ltda. é referência no desenvolvimento de projetos de Instalações Elétricas e Hidráulicas em São Paulo/SP, com foco em excelência técnica, qualidade e pontualidade rigorosa." />
+  <meta name="author" content="FFernandes Engenharia e Construção Ltda." />
+  <meta name="theme-color" content="#FFFFFF" />
+
+  <!-- Open Graph / Social Meta Tags -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="FFernandes Engenharia e Construção Ltda. — Projetos Complementares" />
+  <meta property="og:description" content="Inovação e Excelência em Projetos Complementares. Instalações Elétricas e Hidráulicas em São Paulo/SP." />
+  <meta property="og:image" content="assets/img/hero/hero-residencia.webp" />
+  <meta property="og:locale" content="pt_BR" />
+
+  <!-- Favicon SVG Vetorial Puro -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23092B59'/%3E%3Cpath d='M16 16h28v6H23v9h17v6H23v11h-7V16z' fill='%23ffffff'/%3E%3Cpath d='M35 32h15v6H41v10h-6V32z' fill='%235590C7'/%3E%3C/svg%3E" />
+
+  <!-- Google Fonts: Inter (Interface & Títulos) + IBM Plex Mono (Cotas e Metadados Técnicos) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ==========================================================================
+       1. DESIGN TOKENS — UNSLOP ARCHITECTURAL RAMP (INK LIGHT + FFERNANDES NAVY)
+       Direction:
+       - Product: Escritório de engenharia de projetos complementares (Elétrica e Hidráulica) em SP.
+       - Character: Exato, arquitetônico, sereno.
+       - World: Caderno de encargos executivo, papel técnico claro, traço de precisão.
+       ========================================================================== */
+    :root {
+      /* Ramp Light Ink (unslop tokens.md) */
+      --bg-page: #F6F7F9;
+      --bg-surface: #FFFFFF;
+      --bg-raised: #EEF1F6;
+      --hairline: rgba(15, 23, 42, 0.085);
+      --hairline-strong: rgba(15, 23, 42, 0.16);
+
+      /* Três funções estritas de texto (unslop Pass 2) */
+      --text-primary: #111827;
+      --text-secondary: #4B5565;
+      --text-muted: #6B7487;
+
+      /* Cor Real da Marca FFernandes (Usada com precisão cirúrgica) */
+      --brand-navy: #092B59;
+      --brand-blue: #1E5A96;
+      --brand-blue-tint: #EDF3F9;
+
+      /* Cores Semânticas Toned Down */
+      --positive: #15803D;
+      --positive-bg: #F0FDF4;
+      --negative: #DC2626;
+      --negative-bg: #FEF2F2;
+
+      /* Tipografia (unslop Pass 5: uma família de interface + uma mono para dados) */
+      --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'IBM Plex Mono', monospace;
+
+      /* Raios Aninhados (Nested Radii — unslop Pass 7) */
+      --radius-xs: 6px;
+      --radius-sm: 8px;
+      --radius-md: 12px;
+      --radius-lg: 16px;
+
+      /* Sombras Neutras e Sutis */
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.06);
+
+      /* Curva única de movimento (unslop Pass 9) */
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      font-size: 16px;
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      line-height: 1.55;
+      font-weight: 400;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    :focus-visible {
+      outline: 2px solid var(--brand-blue);
+      outline-offset: 2px;
+    }
+
+    .tabular-nums {
+      font-variant-numeric: tabular-nums;
+      font-family: var(--font-mono);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 32px;
+    }
+
+    /* ==========================================================================
+       2. HEADER QUIET CHROME (SEM TOPBAR AZUL, LOGO NATIVA SOBRE FUNDO CLARO)
+       ========================================================================== */
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background-color: rgba(255, 255, 255, 0.94);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--hairline);
+      transition: background-color 160ms var(--ease);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 76px;
+      gap: 24px;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo-img {
+      height: 54px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .main-nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .nav-link {
+      height: 36px;
+      padding: 0 14px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9375rem;
+      font-weight: 400;
+      color: var(--text-secondary);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: color 140ms var(--ease), background-color 140ms var(--ease);
+    }
+
+    .nav-link:hover {
+      color: var(--text-primary);
+      background-color: var(--bg-raised);
+    }
+
+    .nav-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .header-phone-link {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      padding: 8px 10px;
+      border-radius: var(--radius-sm);
+      transition: color 140ms var(--ease);
+    }
+
+    .header-phone-link:hover {
+      color: var(--text-primary);
+    }
+
+    /* Botões com escala e estados contidos (unslop Pass 2 & 6) */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 44px;
+      padding: 0 20px;
+      border-radius: var(--radius-sm);
+      font-size: 0.9375rem;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 150ms var(--ease), border-color 150ms var(--ease), color 150ms var(--ease), transform 120ms var(--ease);
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn svg {
+      width: 16px;
+      height: 16px;
+      stroke-width: 1.5;
+      flex-shrink: 0;
+    }
+
+    .btn-primary {
+      background-color: var(--brand-navy);
+      color: #FFFFFF;
+    }
+
+    .btn-primary:hover {
+      background-color: var(--brand-blue);
+    }
+
+    .btn-secondary {
+      background-color: var(--bg-surface);
+      color: var(--text-primary);
+      border-color: var(--hairline-strong);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--bg-raised);
+    }
+
+    .btn-sm {
+      min-height: 36px;
+      padding: 0 14px;
+      font-size: 0.8125rem;
+    }
+
+    /* ==========================================================================
+       3. HERO SECTION (SPLIT ASSIMÉTRICO, LIMPO E EDITORIAL — UNSLOP PASS 6)
+       ========================================================================== */
+    .hero-section {
+      background-color: var(--bg-surface);
+      border-bottom: 1px solid var(--hairline);
+      padding: 72px 0 80px;
+    }
+
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1.08fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .hero-overline {
+      font-family: var(--font-mono);
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .hero-overline::before {
+      content: "";
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background-color: var(--brand-blue);
+    }
+
+    .hero-headline {
+      font-size: clamp(2.125rem, 3.5vw, 3.25rem);
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 16px;
+    }
+
+    .hero-subhead {
+      font-size: 1.125rem;
+      font-weight: 400;
+      color: var(--brand-navy);
+      margin-bottom: 16px;
+    }
+
+    .hero-lead {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      line-height: 1.65;
+      max-width: 54ch;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    /* Visual Direito: Fotografia Real em Folha Arquitetônica Clara */
+    .hero-figure {
+      background-color: var(--bg-page);
+      border: 1px solid var(--hairline-strong);
+      border-radius: var(--radius-md);
+      padding: 12px;
+      box-shadow: var(--shadow-md);
+    }
+
+    .hero-photo-wrap {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      aspect-ratio: 1577 / 625;
+      background-color: #E2E8F0;
+    }
+
+    .hero-photo-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-figure-caption {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 12px 4px 4px;
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      flex-wrap: wrap;
+    }
+
+    .hero-figure-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ==========================================================================
+       4. ESTRUTURA DE SEÇÕES E ÍNDICE ARQUITETÔNICO (SIGNATURE DETAIL)
+       ========================================================================== */
+    .section {
+      padding: 88px 0;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .section-surface {
+      background-color: var(--bg-surface);
+    }
+
+    .section-index-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 12px;
+      margin-bottom: 24px;
+      border-top: 1px solid var(--hairline-strong);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+
+    .section-title {
+      font-size: clamp(1.625rem, 2.4vw, 2.25rem);
+      font-weight: 500;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      line-height: 1.15;
+    }
+
+    .section-subtitle {
+      font-size: 1rem;
+      color: var(--text-secondary);
+      max-width: 62ch;
+      margin-top: 10px;
+    }
+
+    /* ==========================================================================
+       5. NOSSA ESSÊNCIA (LAYOUT EDITORIAL ARQUITETÔNICO — SEM CAIXAS PESADAS)
+       ========================================================================== */
+    .essence-layout {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .essence-statement {
+      font-size: 1.25rem;
+      font-weight: 400;
+      color: var(--text-primary);
+      line-height: 1.55;
+      padding-left: 20px;
+      border-left: 2px solid var(--brand-navy);
+    }
+
+    .mvv-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .mvv-block {
+      background-color: var(--bg-page);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-md);
+      padding: 24px;
+    }
+
+    .mvv-block.wide {
+      grid-column: span 2;
+    }
+
+    .mvv-label {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .mvv-heading {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .mvv-copy {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 12px;
+      list-style: none;
+    }
+
+    .values-grid li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+    }
+
+    .values-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background-color: var(--brand-navy);
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       6. NOSSOS DIFERENCIAIS (GRADE TÉCNICA DE 4 COLUNAS COM HAIRLINES)
+       ========================================================================== */
+    .diff-table-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background-color: var(--bg-surface);
+      border: 1px solid var(--hairline-strong);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+    }
+
+    .diff-cell {
+      padding: 28px 24px;
+      border-right: 1px solid var(--hairline);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .diff-cell:last-child {
+      border-right: none;
+    }
+
+    .diff-cell-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: var(--text-muted);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+    }
+
+    .diff-cell-top svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 1.5;
+      color: var(--text-secondary);
+    }
+
+    .diff-cell-title {
+      font-size: 1.0625rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .diff-cell-desc {
+      font-size: 0.9375rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+
+    .technical-note-row {
+      margin-top: 20px;
+      padding: 16px 20px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+    }
+
+    /* ==========================================================================
+       7. NOSSOS SERVIÇOS — ESPECIFICAÇÃO DE DISCIPLINAS (ELÉTRICA E HIDRÁULICA)
+       ========================================================================== */
+    .disciplines-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .discipline-sheet {
+      background-color: var(--bg-page);
+      border: 1px solid var(--hairline-strong);
+      border-radius: var(--radius-md);
+      padding: 28px;
+    }
+
+    .sheet-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 16px;
+      margin-bottom: 16px;
+      border-bottom: 1px solid var(--hairline-strong);
+    }
+
+    .sheet-title {
+      font-size: 1.25rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .sheet-count {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .sheet-rows {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .sheet-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 52px;
+      padding: 10px 16px;
+      background-color: var(--bg-surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      transition: border-color 140ms var(--ease);
+    }
+
+    .sheet-row:hover {
+      border-color: var(--brand-blue);
+    }
+
+    .sheet-row-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .sheet-row-idx {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      width: 24px;
+    }
+
+    .sheet-row-name {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .sheet-row-btn {
+      height: 32px;
+      padding: 0 12px;
+      border-radius: var(--radius-xs);
+      background-color: transparent;
+      border: 1px solid var(--hairline-strong);
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: background-color 140ms var(--ease), color 140ms var(--ease), border-color 140ms var(--ease);
+    }
+
+    .sheet-row-btn:hover {
+      background-color: var(--brand-navy);
+      color: #FFFFFF;
+      border-color: var(--brand-navy);
+    }
+
+    /* ==========================================================================
+       8. PORTFÓLIO DE OBRAS (MANTIDO CONFORME ELOGIADO PELO USUÁRIO)
+       ========================================================================== */
+    .filter-toolbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .category-pills-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow-x: auto;
+      padding-bottom: 4px;
+      scrollbar-width: thin;
+      max-width: 100%;
+    }
+
+    .category-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      min-height: 40px;
+      padding: 0 14px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      border: 1px solid var(--hairline-strong);
+      color: var(--text-secondary);
+      font-weight: 500;
+      font-size: 0.875rem;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 150ms var(--ease), color 150ms var(--ease), border-color 150ms var(--ease);
+    }
+
+    .category-pill:hover {
+      color: var(--text-primary);
+      border-color: var(--text-primary);
+    }
+
+    .category-pill.active {
+      background: var(--brand-navy);
+      color: #FFFFFF;
+      border-color: var(--brand-navy);
+    }
+
+    .pill-badge {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .category-pill.active .pill-badge {
+      color: rgba(255, 255, 255, 0.75);
+    }
+
+    .search-input-wrap {
+      position: relative;
+      min-width: 260px;
+      flex: 1;
+      max-width: 340px;
+    }
+
+    .search-input-wrap svg {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 16px;
+      height: 16px;
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .search-input {
+      width: 100%;
+      height: 40px;
+      padding: 0 12px 0 36px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--hairline-strong);
+      background: var(--bg-surface);
+      font-size: 0.875rem;
+    }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .project-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--hairline-strong);
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: var(--shadow-sm);
+      transition: border-color 160ms var(--ease), box-shadow 160ms var(--ease);
+    }
+
+    .project-card:hover {
+      border-color: var(--brand-blue);
+      box-shadow: var(--shadow-md);
+    }
+
+    .project-media {
+      position: relative;
+      height: 240px;
+      background: #E2E8F0;
+      overflow: hidden;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .project-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 280ms var(--ease);
+    }
+
+    .project-card:hover .project-media img {
+      transform: scale(1.02);
+    }
+
+    .project-top-badges {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      right: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .project-code-badge {
+      background: rgba(17, 24, 39, 0.84);
+      color: #FFFFFF;
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: var(--radius-xs);
+    }
+
+    .project-cat-badge {
+      background: rgba(255, 255, 255, 0.94);
+      color: var(--text-primary);
+      font-size: 0.75rem;
+      font-weight: 500;
+      padding: 3px 8px;
+      border-radius: var(--radius-xs);
+    }
+
+    .project-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .project-title {
+      font-size: 1.125rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      line-height: 1.3;
+      margin-bottom: 6px;
+    }
+
+    .project-location {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+
+    .project-location svg {
+      width: 14px;
+      height: 14px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+    }
+
+    .project-desc {
+      font-size: 0.875rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+
+    .project-meta-box {
+      background: var(--bg-page);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+      font-size: 0.8125rem;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .meta-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 8px;
+    }
+
+    .meta-label {
+      color: var(--text-muted);
+    }
+
+    .meta-val {
+      color: var(--text-primary);
+      font-weight: 500;
+      text-align: right;
+    }
+
+    .discipline-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 12px;
+    }
+
+    .discipline-tag {
+      font-size: 0.75rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: var(--brand-blue-tint);
+      color: var(--brand-navy);
+    }
+
+    .project-actions {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--hairline);
+    }
+
+    /* ==========================================================================
+       9. MATRIZ DE 30 CLIENTES & PARCEIROS (GRADE ESTÁTICA — ZERO MARQUEE)
+       ========================================================================== */
+    .clients-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 12px;
+    }
+
+    .client-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--hairline);
+      border-radius: var(--radius-sm);
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      min-height: 136px;
+      transition: border-color 150ms var(--ease);
+    }
+
+    .client-card:hover {
+      border-color: var(--hairline-strong);
+    }
+
+    .client-logo-box {
+      width: 100%;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .client-logo-box img {
+      max-height: 60px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .client-name {
+      font-size: 0.75rem;
+      color: var(--text-secondary);
+      text-align: center;
+      line-height: 1.3;
+    }
+
+    /* ==========================================================================
+       10. CONTATO TÉCNICO & ORÇAMENTO (SUPERFÍCIES CLARAS E LIMPAS)
+       ========================================================================== */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 32px;
+      align-items: start;
+    }
+
+    .contact-info-sheet {
+      background: var(--bg-surface);
+      border: 1px solid var(--hairline-strong);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+
+    .contact-channel-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 24px;
+    }
+
+    .contact-channel-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-page);
+      border: 1px solid var(--hairline);
+      transition: border-color 140ms var(--ease);
+    }
+
+    .contact-channel-item:hover {
+      border-color: var(--brand-blue);
+    }
+
+    .channel-icon-plain {
+      width: 20px;
+      height: 20px;
+      color: var(--text-secondary);
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    .channel-meta {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      margin-bottom: 2px;
+    }
+
+    .channel-value {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+
+    .channel-note {
+      font-size: 0.8125rem;
+      color: var(--text-secondary);
+      margin-top: 2px;
+    }
+
+    .form-panel {
+      background: var(--bg-surface);
+      border: 1px solid var(--hairline-strong);
+      border-radius: var(--radius-md);
+      padding: 32px;
+    }
+
+    .form-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    .form-label {
+      display: block;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .form-control {
+      width: 100%;
+      min-height: 42px;
+      padding: 8px 12px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--hairline-strong);
+      background: var(--bg-page);
+      font-size: 0.9375rem;
+      color: var(--text-primary);
+      transition: border-color 140ms var(--ease), background-color 140ms var(--ease);
+    }
+
+    .form-control:focus {
+      background: var(--bg-surface);
+      border-color: var(--brand-blue);
+      outline: none;
+    }
+
+    textarea.form-control {
+      min-height: 108px;
+      resize: vertical;
+    }
+
+    .form-feedback {
+      display: none;
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+    }
+
+    .form-feedback.success {
+      display: block;
+      background: var(--positive-bg);
+      border: 1px solid rgba(21, 128, 61, 0.25);
+      color: #14532D;
+    }
+
+    .form-feedback.error {
+      display: block;
+      background: var(--negative-bg);
+      border: 1px solid rgba(220, 38, 38, 0.25);
+      color: #7F1D1D;
+    }
+
+    /* ==========================================================================
+       11. MODAIS (FICHA TÉCNICA & LIGHTBOX DE PRANCHA)
+       ========================================================================== */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      background: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(3px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .modal-backdrop.open {
+      display: flex;
+    }
+
+    .modal-dialog {
+      background: var(--bg-surface);
+      border-radius: var(--radius-lg);
+      max-width: 960px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: var(--shadow-md);
+      border: 1px solid var(--hairline-strong);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .modal-header {
+      padding: 18px 24px;
+      background: var(--bg-surface);
+      border-bottom: 1px solid var(--hairline);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    .modal-close-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--hairline-strong);
+      background: var(--bg-page);
+      color: var(--text-primary);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .modal-body {
+      padding: 24px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+    }
+
+    .modal-main-photo {
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      background: #0F172A;
+      border: 1px solid var(--hairline);
+      aspect-ratio: 4 / 3;
+    }
+
+    .modal-main-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .modal-thumbs {
+      display: flex;
+      gap: 8px;
+      margin-top: 10px;
+      overflow-x: auto;
+    }
+
+    .modal-thumb {
+      width: 72px;
+      height: 54px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 2px solid transparent;
+      cursor: pointer;
+      flex-shrink: 0;
+      background: #0F172A;
+    }
+
+    .modal-thumb.active {
+      border-color: var(--brand-navy);
+    }
+
+    .modal-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* ==========================================================================
+       12. RODAPÉ INSTITUCIONAL & BARRA MOBILE
+       ========================================================================== */
+    .site-footer {
+      background: var(--bg-surface);
+      border-top: 1px solid var(--hairline-strong);
+      color: var(--text-secondary);
+      padding: 56px 0 32px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr 0.9fr 1.1fr;
+      gap: 32px;
+      padding-bottom: 36px;
+      border-bottom: 1px solid var(--hairline);
+    }
+
+    .footer-heading {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-primary);
+      margin-bottom: 14px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.875rem;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-primary);
+    }
+
+    .footer-bottom {
+      padding-top: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.8125rem;
+      color: var(--text-muted);
+    }
+
+    .mobile-bottom-nav {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 60;
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(8px);
+      border-top: 1px solid var(--hairline-strong);
+      padding: 6px 8px calc(6px + env(safe-area-inset-bottom));
+      grid-template-columns: repeat(5, 1fr);
+      gap: 4px;
+    }
+
+    .mobile-nav-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 3px;
+      min-height: 46px;
+      border-radius: 6px;
+      font-size: 0.6875rem;
+      font-weight: 500;
+      color: var(--text-secondary);
+    }
+
+    .mobile-nav-item svg {
+      width: 18px;
+      height: 18px;
+      stroke-width: 1.5;
+    }
+
+    .mobile-nav-item.cta-wa {
+      background: var(--brand-navy);
+      color: #FFFFFF;
+    }
+
+    /* ==========================================================================
+       13. RESPONSIVIDADE MOBILE-FIRST (DESKTOP, TABLET E CELULAR)
+       ========================================================================== */
+    @media (max-width: 1100px) {
+      .hero-split,
+      .essence-layout,
+      .contact-grid,
+      .modal-body {
+        grid-template-columns: 1fr;
+      }
+
+      .diff-table-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .diff-cell:nth-child(2) {
+        border-right: none;
+      }
+
+      .diff-cell:nth-child(1),
+      .diff-cell:nth-child(2) {
+        border-bottom: 1px solid var(--hairline);
+      }
+
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .clients-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding-bottom: 68px;
+      }
+
+      .container {
+        padding: 0 20px;
+      }
+
+      .main-nav,
+      .header-phone-link {
+        display: none;
+      }
+
+      .brand-logo-img {
+        height: 44px;
+      }
+
+      .hero-section {
+        padding: 40px 0 48px;
+      }
+
+      .hero-split {
+        gap: 32px;
+      }
+
+      .section {
+        padding: 56px 0;
+      }
+
+      .mvv-stack,
+      .values-grid,
+      .diff-table-grid,
+      .disciplines-grid,
+      .portfolio-grid,
+      .form-grid-2,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .mvv-block.wide {
+        grid-column: span 1;
+      }
+
+      .diff-cell {
+        border-right: none;
+        border-bottom: 1px solid var(--hairline);
+      }
+
+      .diff-cell:last-child {
+        border-bottom: none;
+      }
+
+      /* Grade mobile de 2 colunas para os 30 clientes */
+      .clients-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+
+      .mobile-bottom-nav {
+        display: grid;
+      }
+
+      .modal-backdrop {
+        padding: 0;
+        align-items: flex-end;
+      }
+
+      .modal-dialog {
+        border-radius: 16px 16px 0 0;
+        max-height: 92vh;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 1. HEADER PRINCIPAL (QUIET CHROME — SEM TOPBAR AZUL) -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#inicio" class="brand-link" aria-label="FFernandes Engenharia e Construção Ltda.">
+        <picture>
+          <source srcset="assets/img/brand/logo-3d.webp" type="image/webp" />
+          <img src="assets/img/brand/logo-3d.png" alt="FFernandes Engenharia e Construção — 12 Anos" class="brand-logo-img" width="142" height="54" />
+        </picture>
+      </a>
+
+      <nav class="main-nav" aria-label="Navegação Principal">
+        <a href="#essencia" class="nav-link">Essência</a>
+        <a href="#diferenciais" class="nav-link">Diferenciais</a>
+        <a href="#servicos" class="nav-link">Serviços</a>
+        <a href="#portfolio" class="nav-link">Portfólio <span class="nav-meta">7</span></a>
+        <a href="#clientes" class="nav-link">Clientes <span class="nav-meta">30</span></a>
+        <a href="#contato" class="nav-link">Contato</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="https://wa.me/5511977008643" target="_blank" rel="noopener" class="header-phone-link tabular-nums">
+          (11) 97700-8643
+        </a>
+        <a href="#contato" class="btn btn-primary btn-sm">
+          Solicitar orçamento
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main id="inicio">
+    <!-- 2. HERO SECTION (SEM ESTATÍSTICAS ARTIFICIAIS E SEM CAIXAS AZUIS PESADAS) -->
+    <section class="hero-section">
+      <div class="container hero-split">
+        <div>
+          <div class="hero-overline">
+            FFernandes Engenharia e Construção Ltda. — São Paulo, SP
+          </div>
+
+          <h1 class="hero-headline">
+            Inovação e Excelência em Projetos Complementares
+          </h1>
+
+          <p class="hero-subhead">
+            Soluções inteligentes para construções modernas
+          </p>
+
+          <p class="hero-lead">
+            Referência no desenvolvimento de projetos executivos de Instalações Elétricas e Hidráulicas, com foco em precisão técnica, atendimento integral às normas vigentes e pontualidade rigorosa.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#portfolio" class="btn btn-primary">
+              Explorar portfólio de obras
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            </a>
+            <a href="https://wa.me/5511977008643" target="_blank" rel="noopener" class="btn btn-secondary">
+              Falar pelo WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <figure class="hero-figure">
+          <div class="hero-photo-wrap">
+            <picture>
+              <source srcset="assets/img/hero/hero-residencia.webp" type="image/webp" />
+              <img
+                src="assets/img/hero/hero-residencia.png"
+                alt="Empreendimento residencial de alto padrão com projetos complementares da FFernandes Engenharia"
+                width="1577"
+                height="625"
+                fetchpriority="high"
+              />
+            </picture>
+          </div>
+          <figcaption class="hero-figure-caption">
+            <span>Projetos executivos de Instalações Elétricas e Hidráulicas</span>
+            <span class="hero-figure-meta">Rua Lajedo, 48 — Jardim Veronia, São Paulo / SP</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- 3. SEÇÃO NOSSA ESSÊNCIA (MISSÃO, VISÃO E VALORES) -->
+    <section class="section section-surface" id="essencia">
+      <div class="container">
+        <div class="section-index-bar">
+          <span>01 / Institucional</span>
+          <span>Missão, visão e valores</span>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Nossa Essência</h2>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="openBoardLightbox('Nossa Essência — Painel Institucional Original', 'assets/img/institutional/nossa-essencia.webp')">
+            Ver prancha original
+          </button>
+        </div>
+
+        <div class="essence-layout">
+          <div>
+            <p class="essence-statement">
+              A FFernandes Engenharia e Construção Ltda. é referência no desenvolvimento de projetos de Instalações Elétricas e Hidráulicas, com foco total em excelência técnica, qualidade e pontualidade rigorosa.
+            </p>
+          </div>
+
+          <div class="mvv-stack">
+            <article class="mvv-block">
+              <div class="mvv-label">01.1</div>
+              <h3 class="mvv-heading">Missão</h3>
+              <p class="mvv-copy">
+                Atuar no segmento de engenharia civil com projetos complementares de alta precisão para diversos tipos de edificações.
+              </p>
+            </article>
+
+            <article class="mvv-block">
+              <div class="mvv-label">01.2</div>
+              <h3 class="mvv-heading">Visão</h3>
+              <p class="mvv-copy">
+                Ser referência em baixo custo, executividade e longevidade, garantindo a qualidade superior do produto final.
+              </p>
+            </article>
+
+            <article class="mvv-block wide">
+              <div class="mvv-label">01.3</div>
+              <h3 class="mvv-heading">Valores</h3>
+              <ul class="values-grid">
+                <li><span class="values-dot"></span>Ética e Transparência</li>
+                <li><span class="values-dot"></span>Compromisso com Prazos</li>
+                <li><span class="values-dot"></span>Inovação e Sustentabilidade</li>
+                <li><span class="values-dot"></span>Valorização do Investimento</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. SEÇÃO NOSSOS DIFERENCIAIS -->
+    <section class="section" id="diferenciais">
+      <div class="container">
+        <div class="section-index-bar">
+          <span>02 / Critérios de projeto</span>
+          <span>Excelência técnica que transforma projetos em resultados concretos</span>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Nossos Diferenciais</h2>
+            <p class="section-subtitle">
+              Do estudo preliminar ao projeto executivo liberado para obra, cada decisão prioriza segurança normativa e racionalização construtiva.
+            </p>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="openBoardLightbox('Nossos Diferenciais — Painel Institucional Original', 'assets/img/institutional/nossos-diferenciais.webp')">
+            Ver prancha original
+          </button>
+        </div>
+
+        <div class="diff-table-grid">
+          <article class="diff-cell">
+            <div class="diff-cell-top">
+              <span>01</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <div>
+              <h3 class="diff-cell-title">Equipe Qualificada</h3>
+              <p class="diff-cell-desc">
+                Profissionais com ampla vivência no segmento da construção civil, garantindo expertise técnica em cada detalhe do projeto.
+              </p>
+            </div>
+          </article>
+
+          <article class="diff-cell">
+            <div class="diff-cell-top">
+              <span>02</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <div>
+              <h3 class="diff-cell-title">Otimização de Custos</h3>
+              <p class="diff-cell-desc">
+                Busca contínua por soluções que diminuam o tempo de execução in-loco e otimizem o investimento global do cliente.
+              </p>
+            </div>
+          </article>
+
+          <article class="diff-cell">
+            <div class="diff-cell-top">
+              <span>03</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+            </div>
+            <div>
+              <h3 class="diff-cell-title">Conformidade Total</h3>
+              <p class="diff-cell-desc">
+                Aplicação rigorosa das normativas vigentes e atendimento integral às normas das concessionárias locais de energia e saneamento.
+              </p>
+            </div>
+          </article>
+
+          <article class="diff-cell">
+            <div class="diff-cell-top">
+              <span>04</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+            </div>
+            <div>
+              <h3 class="diff-cell-title">Qualidade e Eficiência</h3>
+              <p class="diff-cell-desc">
+                Máxima qualidade em todas as etapas, desde o estudo preliminar até o projeto executivo liberado para obra.
+              </p>
+            </div>
+          </article>
+        </div>
+
+        <div class="technical-note-row">
+          <span>Excelência técnica que transforma projetos em resultados concretos</span>
+          <a href="#contato" class="btn btn-secondary btn-sm">Solicitar análise de projeto</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. SEÇÃO NOSSOS SERVIÇOS (CADERNO DE DISCIPLINAS) -->
+    <section class="section section-surface" id="servicos">
+      <div class="container">
+        <div class="section-index-bar">
+          <span>03 / Escopo técnico</span>
+          <span>Instalações elétricas e instalações hidráulicas</span>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Nossos Serviços</h2>
+            <p class="section-subtitle">
+              Projetos desenvolvidos sob as mais rigorosas normas técnicas e de concessionárias locais.
+            </p>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="openBoardLightbox('Nossos Serviços — Painel Institucional Original', 'assets/img/institutional/nossos-servicos.webp')">
+            Ver prancha original
+          </button>
+        </div>
+
+        <div class="disciplines-grid">
+          <!-- Disciplina 1: Elétrica -->
+          <div class="discipline-sheet">
+            <div class="sheet-header">
+              <h3 class="sheet-title">Instalações Elétricas</h3>
+              <span class="sheet-count">4 frentes</span>
+            </div>
+
+            <div class="sheet-rows">
+              <div class="sheet-row">
+                <div class="sheet-row-left">
+                  <span class="sheet-row-idx">01</span>
+                  <span class="sheet-row-name">Sistemas de Energia e Potência</span>
+                </div>
+                <button type="button" class="sheet-row-btn" onclick="selectServiceInForm('Instalações Elétricas — Sistemas de Energia e Potência')">Selecionar</button>
+              </div>
+
+              <div class="sheet-row">
+                <div class="sheet-row-left">
+                  <span class="sheet-row-idx">02</span>
+                  <span class="sheet-row-name">Infraestrutura para Sistemas</span>
+                </div>
+                <button type="button" class="sheet-row-btn" onclick="selectServiceInForm('Instalações Elétricas — Infraestrutura para Sistemas')">Selecionar</button>
+              </div>
+
+              <div class="sheet-row">
+                <div class="sheet-row-left">
+                  <span class="sheet-row-idx">03</span>
+                  <span class="sheet-row-name">SPDA (Para-raios)</span>
+                </div>
+                <button type="button" class="sheet-row-btn" onclick="selectServiceInForm('Instalações Elétricas — SPDA (Para-raios)')">Selecionar</button>
+              </div>
+
+              <div class="sheet-row">
+                <div class="sheet-row-left">
+                  <span class="sheet-row-idx">04</span>
+                  <span class="sheet-row-name">Projetos de Quadros e Bombas</span>
+                </div>
+                <button type="button" class="sheet-row-btn" onclick="selectServiceInForm('Instalações Elétricas — Projetos de Quadros e Bombas')">Selecionar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Disciplina 2: Hidráulica -->
+          <div class="discipline-sheet">
+            <div class="sheet-header">
+              <h3 class="sheet-title">Instalações Hidráulicas</h3>
+              <span class="sheet-count">4 frentes</span>
+            </div>
+
+            <div class="sheet-rows">
+              <div class="sheet-row">
+                <div class="sheet-row-left">
+                  <span class="sheet-row-idx">01</span>
+                  <span class="sheet-row-name">Água Potável e Reservatórios</span>
+                </div>
+                <button type="button" class="sheet-row-btn" onclick="selectServiceInForm('Instalações Hidráulicas — Água Potável e Reservatórios')">Selecionar</button>
+              </div>
+
+              <div class="sheet-row">
+                <div class="sheet-row-left">
+                  <span class="sheet-row-idx">02</span>
+                  <span class="sheet-row-name">Sistemas de Esgoto e Pluviais</span>
+                </div>
+                <button type="button" class="sheet-row-btn" onclick="selectServiceInForm('Instalações Hidráulicas — Sistemas de Esgoto e Pluviais')">Selecionar</button>
+              </div>
+
+              <div class="sheet-row">
+                <div class="sheet-row-left">
+                  <span class="sheet-row-idx">03</span>
+                  <span class="sheet-row-name">Instalações de Gás GLP</span>
+                </div>
+                <button type="button" class="sheet-row-btn" onclick="selectServiceInForm('Instalações Hidráulicas — Instalações de Gás GLP')">Selecionar</button>
+              </div>
+
+              <div class="sheet-row">
+                <div class="sheet-row-left">
+                  <span class="sheet-row-idx">04</span>
+                  <span class="sheet-row-name">Sistemas de Combate a Incêndio</span>
+                </div>
+                <button type="button" class="sheet-row-btn" onclick="selectServiceInForm('Instalações Hidráulicas — Sistemas de Combate a Incêndio')">Selecionar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. PORTFÓLIO DE OBRAS REALIZADAS (MANTIDO INTEGRALMENTE CONFORME PEDIDO) -->
+    <section class="section" id="portfolio">
+      <div class="container">
+        <div class="section-index-bar">
+          <span>04 / Acervo de obras</span>
+          <span>7 empreendimentos documentados</span>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Portfólio de Obras e Projetos</h2>
+            <p class="section-subtitle">
+              Empreendimentos reais projetados pela FFernandes Engenharia. Selecione qualquer obra para abrir a ficha técnica detalhada ou inspecionar a prancha original.
+            </p>
+          </div>
+        </div>
+
+        <div class="filter-toolbar">
+          <div class="category-pills-row" role="tablist" aria-label="Filtrar obras por categoria">
+            <button type="button" class="category-pill active" data-cat="todas" onclick="filterPortfolio('todas')">
+              Todas as obras <span class="pill-badge">7</span>
+            </button>
+            <button type="button" class="category-pill" data-cat="residencial" onclick="filterPortfolio('residencial')">
+              Residencial Alto Padrão <span class="pill-badge">1</span>
+            </button>
+            <button type="button" class="category-pill" data-cat="corporativo" onclick="filterPortfolio('corporativo')">
+              Corporativo &amp; Cultura <span class="pill-badge">1</span>
+            </button>
+            <button type="button" class="category-pill" data-cat="infraestrutura" onclick="filterPortfolio('infraestrutura')">
+              Data Center &amp; Infraestrutura <span class="pill-badge">1</span>
+            </button>
+            <button type="button" class="category-pill" data-cat="shopping" onclick="filterPortfolio('shopping')">
+              Shopping &amp; Varejo <span class="pill-badge">2</span>
+            </button>
+            <button type="button" class="category-pill" data-cat="complexos" onclick="filterPortfolio('complexos')">
+              Lazer &amp; Complexos <span class="pill-badge">2</span>
+            </button>
+          </div>
+
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input
+              type="search"
+              id="portfolioSearchInput"
+              class="search-input"
+              placeholder="Buscar obra, local ou parceiro"
+              oninput="renderPortfolioGrid()"
+              aria-label="Buscar obra no portfólio"
+            />
+          </div>
+        </div>
+
+        <div id="portfolioGrid" class="portfolio-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 7. MATRIZ DE 30 CLIENTES E PARCEIROS -->
+    <section class="section section-surface" id="clientes">
+      <div class="container">
+        <div class="section-index-bar">
+          <span>05 / Relacionamento institucional</span>
+          <span>30 marcas e parceiros</span>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Clientes e Parceiros</h2>
+            <p class="section-subtitle">
+              Construtoras, incorporadoras, redes de varejo, indústrias farmacêuticas, shoppings e órgãos públicos atendidos.
+            </p>
+          </div>
+        </div>
+
+        <div class="filter-toolbar">
+          <div class="category-pills-row" role="tablist" aria-label="Filtrar clientes por setor">
+            <button type="button" class="category-pill client-pill active" data-sector="todos" onclick="filterClients('todos')">
+              Todos <span class="pill-badge">30</span>
+            </button>
+            <button type="button" class="category-pill client-pill" data-sector="engenharia" onclick="filterClients('engenharia')">
+              Construtoras &amp; Engenharia <span class="pill-badge">12</span>
+            </button>
+            <button type="button" class="category-pill client-pill" data-sector="varejo" onclick="filterClients('varejo')">
+              Varejo, Atacado &amp; Shopping <span class="pill-badge">6</span>
+            </button>
+            <button type="button" class="category-pill client-pill" data-sector="saude" onclick="filterClients('saude')">
+              Saúde, Química &amp; Farmácias <span class="pill-badge">6</span>
+            </button>
+            <button type="button" class="category-pill client-pill" data-sector="publico" onclick="filterClients('publico')">
+              Setor Público &amp; Institucional <span class="pill-badge">6</span>
+            </button>
+          </div>
+
+          <div class="search-input-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <input
+              type="search"
+              id="clientSearchInput"
+              class="search-input"
+              placeholder="Filtrar cliente pelo nome"
+              oninput="renderClientsGrid()"
+              aria-label="Filtrar cliente pelo nome"
+            />
+          </div>
+        </div>
+
+        <div id="clientsGrid" class="clients-grid" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <!-- 8. CONTATO E SOLICITAÇÃO DE PROPOSTA -->
+    <section class="section" id="contato">
+      <div class="container">
+        <div class="section-index-bar">
+          <span>06 / Atendimento técnico</span>
+          <span>São Paulo / SP</span>
+        </div>
+
+        <div class="section-header">
+          <div>
+            <h2 class="section-title">Contato e Solicitação de Proposta</h2>
+            <p class="section-subtitle">
+              Fale diretamente com nossa equipe técnica pelos canais oficiais ou envie os dados do seu empreendimento.
+            </p>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" onclick="openBoardLightbox('Cartão Oficial de Contato — FFernandes Engenharia', 'assets/img/institutional/contato-banner.webp')">
+            Ver cartão oficial de contato
+          </button>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-info-sheet">
+            <h3 style="font-size:1.1875rem;font-weight:500;color:var(--text-primary);margin-bottom:6px;">
+              Canais Diretos
+            </h3>
+            <p style="font-size:0.9375rem;color:var(--text-secondary);">
+              FFernandes Engenharia e Construção Ltda.
+            </p>
+
+            <div class="contact-channel-list">
+              <a href="https://wa.me/5511977008643" target="_blank" rel="noopener" class="contact-channel-item">
+                <svg class="channel-icon-plain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                <div>
+                  <div class="channel-meta">Telefone e WhatsApp</div>
+                  <div class="channel-value tabular-nums">(11) 97700-8643</div>
+                  <div class="channel-note">Iniciar conversa direta no WhatsApp</div>
+                </div>
+              </a>
+
+              <a href="mailto:contato@ffernandes.eng.br" class="contact-channel-item">
+                <svg class="channel-icon-plain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                <div>
+                  <div class="channel-meta">E-mail corporativo</div>
+                  <div class="channel-value">contato@ffernandes.eng.br</div>
+                  <div class="channel-note">Envio de plantas, memoriais e escopos</div>
+                </div>
+              </a>
+
+              <a href="https://www.google.com/maps/search/?api=1&query=Rua+Lajedo+48+Jardim+Veronia+Sao+Paulo+SP" target="_blank" rel="noopener" class="contact-channel-item">
+                <svg class="channel-icon-plain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                <div>
+                  <div class="channel-meta">Endereço</div>
+                  <div class="channel-value">Rua Lajedo, 48 - Bairro Jardim Veronia</div>
+                  <div class="channel-note">São Paulo / SP</div>
+                </div>
+              </a>
+
+              <a href="https://www.instagram.com/ffer2014/?__pwa=1" target="_blank" rel="noopener" class="contact-channel-item">
+                <svg class="channel-icon-plain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                <div>
+                  <div class="channel-meta">Instagram</div>
+                  <div class="channel-value">@ffer2014</div>
+                  <div class="channel-note">Publicações e obras realizadas</div>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="form-panel">
+            <h3 style="font-size:1.1875rem;font-weight:500;color:var(--text-primary);margin-bottom:6px;">
+              Solicitação de Orçamento
+            </h3>
+            <p style="font-size:0.875rem;color:var(--text-secondary);margin-bottom:24px;">
+              Informe os dados abaixo para registrar sua solicitação e encaminhar à nossa engenharia.
+            </p>
+
+            <form id="leadQuoteForm" onsubmit="submitLeadForm(event)" novalidate>
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="contact_name">Nome / Responsável *</label>
+                  <input type="text" id="contact_name" name="contact_name" class="form-control" placeholder="Nome completo" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="company_name">Empresa / Construtora</label>
+                  <input type="text" id="company_name" name="company_name" class="form-control" placeholder="Opcional" />
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="phone_whatsapp">Telefone / WhatsApp *</label>
+                  <input type="tel" id="phone_whatsapp" name="phone_whatsapp" class="form-control" placeholder="(11) 99999-9999" required />
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="email">E-mail *</label>
+                  <input type="email" id="email" name="email" class="form-control" placeholder="nome@empresa.com.br" required />
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group">
+                  <label class="form-label" for="discipline_interest">Disciplina de Interesse *</label>
+                  <select id="discipline_interest" name="discipline_interest" class="form-control" required>
+                    <option value="Projetos Completos (Instalações Elétricas e Hidráulicas)">Projetos Completos (Elétrica + Hidráulica)</option>
+                    <option value="Instalações Elétricas — Sistemas de Energia e Potência">Instalações Elétricas — Energia e Potência</option>
+                    <option value="Instalações Elétricas — Infraestrutura para Sistemas">Instalações Elétricas — Infraestrutura para Sistemas</option>
+                    <option value="Instalações Elétricas — SPDA (Para-raios)">Instalações Elétricas — SPDA (Para-raios)</option>
+                    <option value="Instalações Elétricas — Projetos de Quadros e Bombas">Instalações Elétricas — Quadros e Bombas</option>
+                    <option value="Instalações Hidráulicas — Água Potável e Reservatórios">Instalações Hidráulicas — Água Potável e Reservatórios</option>
+                    <option value="Instalações Hidráulicas — Sistemas de Esgoto e Pluviais">Instalações Hidráulicas — Esgoto e Pluviais</option>
+                    <option value="Instalações Hidráulicas — Instalações de Gás GLP">Instalações Hidráulicas — Gás GLP</option>
+                    <option value="Instalações Hidráulicas — Sistemas de Combate a Incêndio">Instalações Hidráulicas — Combate a Incêndio</option>
+                    <option value="Projetos Retrofit Complementares / As-Built">Projetos Retrofit Complementares / As-Built</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="project_location">Local da Obra</label>
+                  <input type="text" id="project_location" name="project_location" class="form-control" placeholder="Cidade / UF" />
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="message">Escopo do Projeto *</label>
+                <textarea id="message" name="message" class="form-control" placeholder="Tipo de edificação, metragem aproximada e disciplinas necessárias" required></textarea>
+              </div>
+
+              <button type="submit" id="submitLeadBtn" class="btn btn-primary" style="width:100%;">
+                Enviar solicitação técnica
+              </button>
+
+              <div id="formFeedbackBox" class="form-feedback" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 9. RODAPÉ INSTITUCIONAL LIMPO -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <picture>
+            <source srcset="assets/img/brand/logo-footer.webp" type="image/webp" />
+            <img src="assets/img/brand/logo-footer.png" alt="FFernandes Engenharia de Projetos" width="92" height="70" style="height:56px;width:auto;margin-bottom:14px;" />
+          </picture>
+          <p style="font-size:0.875rem;line-height:1.6;max-width:40ch;">
+            FFernandes Engenharia e Construção Ltda. — Desenvolvimento de projetos de Instalações Elétricas e Hidráulicas com excelência técnica, qualidade e pontualidade.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Seções</h4>
+          <ul class="footer-links">
+            <li><a href="#inicio">Início</a></li>
+            <li><a href="#essencia">Nossa Essência</a></li>
+            <li><a href="#diferenciais">Nossos Diferenciais</a></li>
+            <li><a href="#servicos">Nossos Serviços</a></li>
+            <li><a href="#portfolio">Portfólio de Obras</a></li>
+            <li><a href="#clientes">Clientes e Parceiros</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Especialidades</h4>
+          <ul class="footer-links">
+            <li><a href="#servicos">Sistemas de Energia e Potência</a></li>
+            <li><a href="#servicos">Infraestrutura para Sistemas</a></li>
+            <li><a href="#servicos">SPDA (Para-raios)</a></li>
+            <li><a href="#servicos">Projetos de Quadros e Bombas</a></li>
+            <li><a href="#servicos">Água Potável e Reservatórios</a></li>
+            <li><a href="#servicos">Sistemas de Esgoto e Pluviais</a></li>
+            <li><a href="#servicos">Instalações de Gás GLP</a></li>
+            <li><a href="#servicos">Sistemas de Combate a Incêndio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contato</h4>
+          <ul class="footer-links">
+            <li>Rua Lajedo, 48 - Bairro Jardim Veronia</li>
+            <li>São Paulo / SP</li>
+            <li class="tabular-nums"><a href="https://wa.me/5511977008643" target="_blank" rel="noopener">(11) 97700-8643</a></li>
+            <li><a href="mailto:contato@ffernandes.eng.br">contato@ffernandes.eng.br</a></li>
+            <li><a href="https://www.instagram.com/ffer2014/?__pwa=1" target="_blank" rel="noopener">@ffer2014</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© FFernandes Engenharia e Construção Ltda.</span>
+        <span>Projetos desenvolvidos sob as mais rigorosas normas técnicas e de concessionárias locais</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- 10. BARRA INFERIOR MOBILE -->
+  <nav class="mobile-bottom-nav" aria-label="Navegação rápida mobile">
+    <a href="#inicio" class="mobile-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+      <span>Início</span>
+    </a>
+    <a href="#servicos" class="mobile-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+      <span>Serviços</span>
+    </a>
+    <a href="#portfolio" class="mobile-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18"/><path d="M9 21V9"/></svg>
+      <span>Obras</span>
+    </a>
+    <a href="#clientes" class="mobile-nav-item">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+      <span>Clientes</span>
+    </a>
+    <a href="https://wa.me/5511977008643" target="_blank" rel="noopener" class="mobile-nav-item cta-wa">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+      <span>WhatsApp</span>
+    </a>
+  </nav>
+
+  <!-- 11. MODAL DE FICHA TÉCNICA DA OBRA -->
+  <div id="projectModal" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="modalProjectTitle" onclick="if(event.target===this)closeProjectModal()">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div>
+          <span id="modalProjectCode" class="tabular-nums" style="font-size:0.75rem;color:var(--text-muted);">01</span>
+          <h3 id="modalProjectTitle" style="font-size:1.125rem;font-weight:500;color:var(--text-primary);">Título da Obra</h3>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeProjectModal()" aria-label="Fechar ficha técnica">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div class="modal-body" id="modalProjectBody"></div>
+    </div>
+  </div>
+
+  <!-- 12. MODAL LIGHTBOX DE PRANCHA TÉCNICA -->
+  <div id="boardLightbox" class="modal-backdrop" role="dialog" aria-modal="true" aria-labelledby="lightboxTitle" onclick="if(event.target===this)closeBoardLightbox()">
+    <div class="modal-dialog" style="max-width:1080px;">
+      <div class="modal-header">
+        <div>
+          <span style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);">Documento Técnico Original</span>
+          <h3 id="lightboxTitle" style="font-size:1.0625rem;font-weight:500;color:var(--text-primary);">Prancha Técnica</h3>
+        </div>
+        <button type="button" class="modal-close-btn" onclick="closeBoardLightbox()" aria-label="Fechar visualização">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+      <div style="padding:20px;background:#0F172A;display:flex;justify-content:center;align-items:center;max-height:80vh;overflow:auto;">
+        <img id="lightboxImage" src="" alt="Prancha Técnica Original" style="max-width:100%;height:auto;border-radius:6px;margin:auto;" />
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. DADOS AUTÊNTICOS & LÓGICA DO FRONTEND -->
+  <script>
+    const PORTFOLIO_PROJECTS = [
+      {
+        id: "proj-01",
+        code: "01",
+        title: "Condomínio TRIO — Alto de Pinheiros",
+        location: "R. Antônio de Gouvêia Giudice × Pça. Beethoven — Alto de Pinheiros, São Paulo/SP",
+        category_slug: "residencial",
+        category_label: "Residencial Alto Padrão",
+        partner_name: "F.Fernandes Engenharia",
+        area_or_scale: "Condomínio exclusivo • 3 casas de alto padrão",
+        official_description: "Onde o Luxo Encontra a Perfeição no Alto de Pinheiros. Descubra o Trio, um condomínio exclusivo de apenas 3 casas de alto padrão nas prestigiadas R. Antônio de Gouvêia Giudice X Pça Beethoven no Alto de Pinheiros. A excelência é garantida pela F.Fernandes Engenharia, responsável por todos os projetos de instalações elétricas e hidráulicas, assegurando funcionalidade impecável e o mais alto padrão de segurança e conforto. Viva a exclusividade que você merece.",
+        disciplines: ["Instalações Elétricas", "Instalações Hidráulicas"],
+        cover_image: "assets/img/portfolio/crops/crop-01-condominio-trio.webp",
+        gallery: [
+          { src: "assets/img/portfolio/crops/crop-01-condominio-trio.webp", label: "Perspectiva arquitetônica" },
+          { src: "assets/img/portfolio/crops/crop-01b-trio-planta.webp", label: "Implantação e piscinas" },
+          { src: "assets/img/portfolio/prancha-01-condominio-trio.webp", label: "Prancha oficial completa" }
+        ],
+        board_image: "assets/img/portfolio/prancha-01-condominio-trio.webp"
+      },
+      {
+        id: "proj-02",
+        code: "02",
+        title: "Heineken Campus (Heineken House) — Parque Villa-Lobos",
+        location: "Parque Villa-Lobos — São Paulo/SP",
+        category_slug: "corporativo",
+        category_label: "Corporativo & Cultura",
+        partner_name: "RMR Engenharia (@rmrengenharia) e DC Set (@dcset)",
+        area_or_scale: "Espaço cultural, gastronomia e lifestyle",
+        official_description: "A Heineken House chegou ao Parque Villa-Lobos e nossa equipe fez parte dessa história. Nós da F.Fernandes Engenharia desenvolvemos os projetos de Instalações Elétricas e Hidráulicas deste espaço que une gastronomia, cultura, música, bem-estar e lifestyle em um dos principais parques urbanos de São Paulo. Um empreendimento que reforça o potencial do Villa-Lobos como destino de experiências de marca e ocupações culturais e que tem a nossa assinatura técnica por dentro. Que venham novos desafios e cases de sucesso em parceria com a @rmrengenharia e @dcset",
+        disciplines: ["Instalações Elétricas", "Instalações Hidráulicas"],
+        cover_image: "assets/img/portfolio/crops/crop-02-heineken-campus.webp",
+        gallery: [
+          { src: "assets/img/portfolio/crops/crop-02-heineken-campus.webp", label: "Terraço e estrutura externa" },
+          { src: "assets/img/portfolio/crops/crop-02b-heineken-aerial.webp", label: "Implantação no Parque Villa-Lobos" },
+          { src: "assets/img/portfolio/crops/crop-02c-heineken-lounge.webp", label: "Ambiente interno e iluminação" },
+          { src: "assets/img/portfolio/prancha-02-heineken-campus.webp", label: "Prancha oficial completa" }
+        ],
+        board_image: "assets/img/portfolio/prancha-02-heineken-campus.webp"
+      },
+      {
+        id: "proj-03",
+        code: "03",
+        title: "Data Center — Município de Paulínia",
+        location: "Município de Paulínia / SP",
+        category_slug: "infraestrutura",
+        category_label: "Data Center & Infraestrutura",
+        partner_name: "Enerwatt Engenharia",
+        area_or_scale: "Reservatório Torre e casa de bombas",
+        official_description: "DATA CENTER MUNICÍPIO DE PAULÍNIA — Projeto: Reservatório Torre e casa de bombas para reserva de Incêndio e Hidrantes. Em parceria com: Enerwatt Engenharia.",
+        disciplines: ["Reservatório Torre", "Casa de Bombas", "Reserva de Incêndio e Hidrantes"],
+        cover_image: "assets/img/portfolio/crops/crop-03b-datacenter-torre.webp",
+        gallery: [
+          { src: "assets/img/portfolio/crops/crop-03b-datacenter-torre.webp", label: "Base do Reservatório Torre" },
+          { src: "assets/img/portfolio/crops/crop-03-datacenter-paulinia.webp", label: "Infraestrutura e subestação" },
+          { src: "assets/img/portfolio/prancha-03-datacenter-paulinia.webp", label: "Prancha oficial completa" }
+        ],
+        board_image: "assets/img/portfolio/prancha-03-datacenter-paulinia.webp"
+      },
+      {
+        id: "proj-04",
+        code: "04",
+        title: "Shopping Vautier Premium",
+        location: "Canindé / Brás — São Paulo/SP",
+        category_slug: "shopping",
+        category_label: "Shopping & Varejo",
+        partner_name: "Shopping Vautier Premium",
+        area_or_scale: "Retrofit complementar • 26 novas lojas",
+        official_description: "SHOPPING VAUTIER PREMIUM — PROJETOS RETROFIT COMPLEMENTARES (26 NOVAS LOJAS).",
+        disciplines: ["Projetos Retrofit Complementares", "Instalações Elétricas", "Instalações Hidráulicas"],
+        cover_image: "assets/img/portfolio/crops/crop-04b-vautier-fachada2.webp",
+        gallery: [
+          { src: "assets/img/portfolio/crops/crop-04b-vautier-fachada2.webp", label: "Edifício Shopping Vautier" },
+          { src: "assets/img/portfolio/crops/crop-04-shopping-vautier.webp", label: "Acesso principal Vautier Premium" },
+          { src: "assets/img/portfolio/prancha-04-vautier-allbras.webp", label: "Prancha oficial Shopping Centers" }
+        ],
+        board_image: "assets/img/portfolio/prancha-04-vautier-allbras.webp"
+      },
+      {
+        id: "proj-05",
+        code: "05",
+        title: "Shopping All Brás",
+        location: "Brás — São Paulo/SP",
+        category_slug: "shopping",
+        category_label: "Shopping & Varejo",
+        partner_name: "All Brás Shopping",
+        area_or_scale: "Retrofit complementar • 316 novas bancas e 9 boxes",
+        official_description: "SHOPPING ALL BRÁS — PROJETOS RETROFIT COMPLEMENTARES (316 NOVAS BANCAS E 9 BOXES).",
+        disciplines: ["Projetos Retrofit Complementares", "316 Novas Bancas e 9 Boxes", "Elétrica e Hidráulica"],
+        cover_image: "assets/img/portfolio/crops/crop-05-shopping-allbras.webp",
+        gallery: [
+          { src: "assets/img/portfolio/crops/crop-05-shopping-allbras.webp", label: "Fachada Shopping All Brás" },
+          { src: "assets/img/portfolio/crops/crop-05b-allbras-obra.webp", label: "Execução e estrutura de retrofit" },
+          { src: "assets/img/portfolio/prancha-04-vautier-allbras.webp", label: "Prancha oficial Shopping Centers" }
+        ],
+        board_image: "assets/img/portfolio/prancha-04-vautier-allbras.webp"
+      },
+      {
+        id: "proj-06",
+        code: "06",
+        title: "Simba Safari — São Paulo",
+        location: "São Paulo / SP",
+        category_slug: "complexos",
+        category_label: "Lazer & Complexos",
+        partner_name: "Planem Engenharia",
+        area_or_scale: "7 disciplinas de infraestrutura completa",
+        official_description: "SIMBA SAFARI — DESENVOLVIMENTO E EXECUÇÃO DE PROJETOS EM: Energia, Sistemas, Água potável, Castelo d'água, Esgoto, Gás GLP, Águas pluviais. Em parceria com: PLANEM ENGENHARIA.",
+        disciplines: ["Energia", "Sistemas", "Água potável", "Castelo d'água", "Esgoto", "Gás GLP", "Águas pluviais"],
+        cover_image: "assets/img/portfolio/crops/crop-06-simba-safari.webp",
+        gallery: [
+          { src: "assets/img/portfolio/crops/crop-06-simba-safari.webp", label: "Infraestrutura de iluminação e sistemas" },
+          { src: "assets/img/portfolio/crops/crop-06b-simba-entrada.webp", label: "Sistemas hidráulicos especiais" },
+          { src: "assets/img/portfolio/crops/crop-06c-simba-recinto.webp", label: "Recintos ambientais e águas pluviais" },
+          { src: "assets/img/portfolio/prancha-05-simba-safari.webp", label: "Prancha oficial completa" }
+        ],
+        board_image: "assets/img/portfolio/prancha-05-simba-safari.webp"
+      },
+      {
+        id: "proj-07",
+        code: "07",
+        title: "Clube Bayer Santo Amaro",
+        location: "Santo Amaro — Município de São Paulo/SP",
+        category_slug: "complexos",
+        category_label: "Lazer & Complexos",
+        partner_name: "ACE Engenharia",
+        area_or_scale: "Aprox. 1.200 m² • Retrofit e As-Built hidrossanitário",
+        official_description: "CLUBE BAYER STO. AMARO - MUNICÍPIO DE SÃO PAULO | RETROFIT REFORMA HIDRÁULICA. APROX.: 1200m2 | PROJETOS AS-BUILT INSTALAÇÕES HIDROSSANITÁRIAS. Em parceria com ACE ENGENHARIA.",
+        disciplines: ["Retrofit Reforma Hidráulica (1.200m²)", "Projetos As-Built Hidrossanitários"],
+        cover_image: "assets/img/portfolio/crops/crop-07-clube-bayer.webp",
+        gallery: [
+          { src: "assets/img/portfolio/crops/crop-07-clube-bayer.webp", label: "Complexo Bayer Santo Amaro" },
+          { src: "assets/img/portfolio/crops/crop-07b-clube-bayer-piscina.webp", label: "Plantas técnicas As-Built" },
+          { src: "assets/img/portfolio/prancha-06-clube-bayer.webp", label: "Prancha oficial completa" }
+        ],
+        board_image: "assets/img/portfolio/prancha-06-clube-bayer.webp"
+      }
+    ];
+
+    const OFFICIAL_CLIENTS = [
+      { id: 1, name: "Atacadão", sector: "varejo", label: "Varejo & Atacado", file: "client-01-atacadao" },
+      { id: 2, name: "Bayer", sector: "saude", label: "Saúde & Química", file: "client-02-bayer" },
+      { id: 3, name: "Enelpa Instalações", sector: "engenharia", label: "Engenharia", file: "client-03-enelpa" },
+      { id: 4, name: "Toledo Ferrari Construtora", sector: "engenharia", label: "Construtora", file: "client-04-toledo-ferrari" },
+      { id: 5, name: "Corpo de Bombeiros PMESP", sector: "publico", label: "Setor Público", file: "client-05-bombeiros-pmesp" },
+      { id: 6, name: "Assaí Atacadista", sector: "varejo", label: "Varejo & Atacado", file: "client-06-assai" },
+      { id: 7, name: "Prefeitura de SP — Freguesia/Brasilândia", sector: "publico", label: "Setor Público", file: "client-07-prefeitura-sp" },
+      { id: 8, name: "Cambur Construtora e Incorporadora", sector: "engenharia", label: "Construtora", file: "client-08-cambur" },
+      { id: 9, name: "Drogaria São Paulo", sector: "saude", label: "Saúde & Farmácias", file: "client-09-drogaria-sp" },
+      { id: 10, name: "EverSun Energia", sector: "publico", label: "Energia", file: "client-10-eversun" },
+      { id: 11, name: "Helbor Incorporadora", sector: "engenharia", label: "Incorporadora", file: "client-11-helbor" },
+      { id: 12, name: "HH — Henrique & Henrique Engenharia", sector: "engenharia", label: "Engenharia", file: "client-12-hh-engenharia" },
+      { id: 13, name: "Irmãs Hospitaleiras", sector: "saude", label: "Saúde & Hospitalar", file: "client-13-irmas-hospitaleiras" },
+      { id: 14, name: "JRJ Engenharia", sector: "engenharia", label: "Engenharia", file: "client-14-jrj-engenharia" },
+      { id: 15, name: "SBN — Soc. Brasileira de Neurocirurgia", sector: "saude", label: "Saúde", file: "client-15-sbn-neurocirurgia" },
+      { id: 16, name: "Drogarias Pacheco", sector: "saude", label: "Saúde & Farmácias", file: "client-16-drogarias-pacheco" },
+      { id: 17, name: "Mutual Engenharia Inteligente", sector: "engenharia", label: "Engenharia", file: "client-17-mutual-engenharia" },
+      { id: 18, name: "Farmácias Pague Menos", sector: "saude", label: "Saúde & Farmácias", file: "client-18-pague-menos" },
+      { id: 19, name: "Planem Engenharia", sector: "engenharia", label: "Engenharia", file: "client-19-planem-engenharia" },
+      { id: 20, name: "Ragazzo!", sector: "varejo", label: "Alimentação & Redes", file: "client-20-ragazzo" },
+      { id: 21, name: "RMR Engenharia", sector: "engenharia", label: "Engenharia", file: "client-21-rmr-engenharia" },
+      { id: 22, name: "Rock & Ribs Steakhouse", sector: "varejo", label: "Gastronomia & Redes", file: "client-22-rock-and-ribs" },
+      { id: 23, name: "Pense Bem! — SBN / Min. da Saúde", sector: "publico", label: "Institucional", file: "client-23-pense-bem-sbn" },
+      { id: 24, name: "PCON Construtora", sector: "engenharia", label: "Construtora", file: "client-24-pcon-construtora" },
+      { id: 25, name: "All Brás Shopping", sector: "varejo", label: "Shopping Center", file: "client-25-all-bras-shopping" },
+      { id: 26, name: "Shopping Vautier", sector: "varejo", label: "Shopping Center", file: "client-26-shopping-vautier" },
+      { id: 27, name: "Zabo Engenharia", sector: "engenharia", label: "Engenharia", file: "client-27-zabo-engenharia" },
+      { id: 28, name: "Enerwatt Engenharia", sector: "engenharia", label: "Engenharia", file: "client-28-enerwatt-engenharia" },
+      { id: 29, name: "Bombeiros — Combate a Incêndio", sector: "publico", label: "Segurança Contra Incêndio", file: "client-29-bombeiros-viatura" },
+      { id: 30, name: "TAEL Instalações", sector: "publico", label: "Infraestrutura", file: "client-30-tael" }
+    ];
+
+    let activePortfolioCategory = "todas";
+    let activeClientSector = "todos";
+
+    function filterPortfolio(cat) {
+      activePortfolioCategory = cat;
+      document.querySelectorAll(".category-pill:not(.client-pill)").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.cat === cat);
+      });
+      renderPortfolioGrid();
+    }
+
+    function renderPortfolioGrid() {
+      const grid = document.getElementById("portfolioGrid");
+      const query = (document.getElementById("portfolioSearchInput")?.value || "").trim().toLowerCase();
+
+      const filtered = PORTFOLIO_PROJECTS.filter(p => {
+        const matchesCat = activePortfolioCategory === "todas" || p.category_slug === activePortfolioCategory;
+        const haystack = `${p.title} ${p.location} ${p.partner_name} ${p.official_description} ${p.disciplines.join(" ")}`.toLowerCase();
+        const matchesQuery = !query || haystack.includes(query);
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column:1/-1;padding:40px;text-align:center;background:var(--bg-surface);border-radius:var(--radius-md);border:1px solid var(--hairline);">
+            <p style="font-weight:500;color:var(--text-primary);margin-bottom:10px;">Nenhuma obra encontrada para o filtro informado</p>
+            <button type="button" class="btn btn-secondary btn-sm" onclick="document.getElementById('portfolioSearchInput').value='';filterPortfolio('todas')">Mostrar todas as obras</button>
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map((p) => {
+        const tagsHtml = p.disciplines.map(d => `<span class="discipline-tag">${d}</span>`).join("");
+        return `
+          <article class="project-card">
+            <div class="project-media" onclick="openProjectModal('${p.id}')" style="cursor:pointer;">
+              <img src="${p.cover_image}" alt="${p.title}" loading="lazy" width="600" height="400" />
+              <div class="project-top-badges">
+                <span class="project-code-badge">${p.code}</span>
+                <span class="project-cat-badge">${p.category_label}</span>
+              </div>
+            </div>
+
+            <div class="project-body">
+              <div>
+                <h3 class="project-title">${p.title}</h3>
+                <div class="project-location">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <span>${p.location}</span>
+                </div>
+                <p class="project-desc">${p.official_description}</p>
+
+                <div class="project-meta-box">
+                  <div class="meta-row">
+                    <span class="meta-label">Escopo</span>
+                    <span class="meta-val">${p.area_or_scale}</span>
+                  </div>
+                  <div class="meta-row">
+                    <span class="meta-label">Parceria</span>
+                    <span class="meta-val">${p.partner_name}</span>
+                  </div>
+                </div>
+
+                <div class="discipline-tags">${tagsHtml}</div>
+              </div>
+
+              <div class="project-actions">
+                <button type="button" class="btn btn-primary btn-sm" onclick="openProjectModal('${p.id}')">
+                  Ficha técnica
+                </button>
+                <button type="button" class="btn btn-secondary btn-sm" onclick="openBoardLightbox('${p.title} — Prancha Oficial', '${p.board_image}')">
+                  Prancha original
+                </button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function openProjectModal(projectId) {
+      const p = PORTFOLIO_PROJECTS.find(item => item.id === projectId);
+      if (!p) return;
+
+      document.getElementById("modalProjectCode").textContent = `${p.code} / ${p.category_label}`;
+      document.getElementById("modalProjectTitle").textContent = p.title;
+
+      const thumbsHtml = p.gallery.map((g, idx) => `
+        <button type="button" class="modal-thumb ${idx === 0 ? 'active' : ''}" onclick="switchModalPhoto(this, '${g.src}', '${g.label}')">
+          <img src="${g.src}" alt="${g.label}" />
+        </button>
+      `).join("");
+
+      const tagsHtml = p.disciplines.map(d => `<span class="discipline-tag">${d}</span>`).join("");
+
+      document.getElementById("modalProjectBody").innerHTML = `
+        <div>
+          <div class="modal-main-photo">
+            <img id="modalMainImg" src="${p.gallery[0].src}" alt="${p.title}" />
+          </div>
+          <div id="modalPhotoCaption" style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);margin-top:8px;">
+            ${p.gallery[0].label}
+          </div>
+          <div class="modal-thumbs">${thumbsHtml}</div>
+        </div>
+
+        <div style="display:flex;flex-direction:column;justify-content:space-between;gap:20px;">
+          <div>
+            <div style="font-family:var(--font-mono);font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;">
+              Memorial descritivo
+            </div>
+            <p style="font-size:0.9375rem;color:var(--text-primary);line-height:1.65;margin-bottom:20px;">
+              ${p.official_description}
+            </p>
+
+            <div class="project-meta-box" style="margin-bottom:16px;">
+              <div class="meta-row">
+                <span class="meta-label">Localização</span>
+                <span class="meta-val">${p.location}</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Escala</span>
+                <span class="meta-val">${p.area_or_scale}</span>
+              </div>
+              <div class="meta-row">
+                <span class="meta-label">Parceiro</span>
+                <span class="meta-val">${p.partner_name}</span>
+              </div>
+            </div>
+
+            <div style="font-size:0.8125rem;font-weight:500;color:var(--text-primary);margin-bottom:8px;">
+              Disciplinas desenvolvidas
+            </div>
+            <div class="discipline-tags">${tagsHtml}</div>
+          </div>
+
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <button type="button" class="btn btn-secondary" onclick="closeProjectModal();openBoardLightbox('${p.title} — Prancha Oficial', '${p.board_image}')">
+              Abrir prancha técnica original
+            </button>
+            <button type="button" class="btn btn-primary" onclick="closeProjectModal();selectServiceInForm('Projeto similar a: ${p.title}')">
+              Solicitar orçamento similar
+            </button>
+          </div>
+        </div>
+      `;
+
+      document.getElementById("projectModal").classList.add("open");
+    }
+
+    function switchModalPhoto(btnEl, src, label) {
+      document.getElementById("modalMainImg").src = src;
+      document.getElementById("modalPhotoCaption").textContent = label;
+      btnEl.parentElement.querySelectorAll(".modal-thumb").forEach(b => b.classList.remove("active"));
+      btnEl.classList.add("active");
+    }
+
+    function closeProjectModal() {
+      document.getElementById("projectModal").classList.remove("open");
+    }
+
+    function openBoardLightbox(title, imgSrc) {
+      document.getElementById("lightboxTitle").textContent = title;
+      document.getElementById("lightboxImage").src = imgSrc;
+      document.getElementById("boardLightbox").classList.add("open");
+    }
+
+    function closeBoardLightbox() {
+      document.getElementById("boardLightbox").classList.remove("open");
+    }
+
+    function filterClients(sector) {
+      activeClientSector = sector;
+      document.querySelectorAll(".client-pill").forEach(btn => {
+        btn.classList.toggle("active", btn.dataset.sector === sector);
+      });
+      renderClientsGrid();
+    }
+
+    function renderClientsGrid() {
+      const grid = document.getElementById("clientsGrid");
+      const query = (document.getElementById("clientSearchInput")?.value || "").trim().toLowerCase();
+
+      const filtered = OFFICIAL_CLIENTS.filter(c => {
+        const matchesSector = activeClientSector === "todos" || c.sector === activeClientSector;
+        const matchesQuery = !query || c.name.toLowerCase().includes(query) || c.label.toLowerCase().includes(query);
+        return matchesSector && matchesQuery;
+      });
+
+      grid.innerHTML = filtered.map(c => `
+        <div class="client-card" title="${c.name}">
+          <div class="client-logo-box">
+            <picture>
+              <source srcset="assets/img/clients/${c.file}.webp" type="image/webp" />
+              <img src="assets/img/clients/${c.file}.png" alt="${c.name}" loading="lazy" width="160" height="80" />
+            </picture>
+          </div>
+          <div class="client-name">${c.name}</div>
+        </div>
+      `).join("");
+    }
+
+    function selectServiceInForm(serviceText) {
+      const selectEl = document.getElementById("discipline_interest");
+      const msgEl = document.getElementById("message");
+      if (selectEl) {
+        let found = false;
+        for (const opt of selectEl.options) {
+          if (opt.value === serviceText) {
+            selectEl.value = serviceText;
+            found = true;
+            break;
+          }
+        }
+        if (!found) {
+          selectEl.selectedIndex = 0;
+          if (msgEl && !msgEl.value.includes(serviceText)) {
+            msgEl.value = `Referência: ${serviceText}\n` + msgEl.value;
+          }
+        }
+      }
+      document.getElementById("contato").scrollIntoView({ behavior: "smooth" });
+      setTimeout(() => document.getElementById("contact_name")?.focus(), 450);
+    }
+
+    async function submitLeadForm(event) {
+      event.preventDefault();
+      const feedback = document.getElementById("formFeedbackBox");
+      const submitBtn = document.getElementById("submitLeadBtn");
+
+      const payload = {
+        contact_name: document.getElementById("contact_name").value.trim(),
+        company_name: document.getElementById("company_name").value.trim(),
+        phone_whatsapp: document.getElementById("phone_whatsapp").value.trim(),
+        email: document.getElementById("email").value.trim(),
+        discipline_interest: document.getElementById("discipline_interest").value,
+        project_location: document.getElementById("project_location").value.trim(),
+        message: document.getElementById("message").value.trim()
+      };
+
+      if (!payload.contact_name || !payload.phone_whatsapp || !payload.email || !payload.message) {
+        feedback.className = "form-feedback error";
+        feedback.textContent = "Preencha todos os campos obrigatórios marcados com asterisco (*).";
+        return;
+      }
+
+      submitBtn.disabled = true;
+      const idempotencyKey = `ffernandes-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+
+      const waText = encodeURIComponent(
+        `Olá, equipe FFernandes Engenharia!\n\n` +
+        `Solicito atendimento técnico pelo site:\n` +
+        `• Nome: ${payload.contact_name}${payload.company_name ? ' (' + payload.company_name + ')' : ''}\n` +
+        `• Disciplina: ${payload.discipline_interest}\n` +
+        (payload.project_location ? `• Local da Obra: ${payload.project_location}\n` : ``) +
+        `• Telefone: ${payload.phone_whatsapp}\n` +
+        `• E-mail: ${payload.email}\n` +
+        `• Escopo: ${payload.message}`
+      );
+      const fallbackWaUrl = `https://wa.me/5511977008643?text=${waText}`;
+
+      try {
+        const res = await fetch("/api/v1/leads", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Idempotency-Key": idempotencyKey
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const data = await res.json();
+        if (res.ok) {
+          const waUrl = data.whatsapp_redirect_url || fallbackWaUrl;
+          feedback.className = "form-feedback success";
+          feedback.innerHTML = `
+            <div style="font-weight:500;margin-bottom:6px;">
+              Solicitação registrada — Protocolo <span class="tabular-nums">${data.lead_id}</span>
+            </div>
+            <p style="font-size:0.8125rem;margin-bottom:12px;">
+              Para atendimento imediato, encaminhe o resumo estruturado diretamente ao nosso WhatsApp:
+            </p>
+            <a href="${waUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+              Encaminhar pelo WhatsApp (11) 97700-8643
+            </a>
+          `;
+          document.getElementById("leadQuoteForm").reset();
+        } else {
+          const detail = data.invalid_params
+            ? data.invalid_params.map(p => p.reason).join(" ")
+            : (data.detail || "Verifique os campos informados.");
+          feedback.className = "form-feedback error";
+          feedback.textContent = detail;
+        }
+      } catch (_) {
+        feedback.className = "form-feedback success";
+        feedback.innerHTML = `
+          <div style="font-weight:500;margin-bottom:6px;">Resumo técnico pronto para envio</div>
+          <p style="font-size:0.8125rem;margin-bottom:12px;">
+            Prossiga abaixo para enviar sua solicitação diretamente no WhatsApp da FFernandes Engenharia:
+          </p>
+          <a href="${fallbackWaUrl}" target="_blank" rel="noopener" class="btn btn-primary btn-sm">
+            Abrir no WhatsApp (11) 97700-8643
+          </a>
+        `;
+      } finally {
+        submitBtn.disabled = false;
+      }
+    }
+
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeProjectModal();
+        closeBoardLightbox();
+      }
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+      renderPortfolioGrid();
+      renderClientsGrid();
+    });
+  </script>
+</body>
+</html>
